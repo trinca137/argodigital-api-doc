@@ -1,4 +1,4 @@
-Checkout2
+Checkout
 ==================
 
 Serviço para realizar o pagamento de um cotação.
