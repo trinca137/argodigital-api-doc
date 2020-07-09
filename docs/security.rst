@@ -4,12 +4,28 @@ Autenticação
 Login
 ^^^^^^^^^^^^^^
 Serviço utilizado para autenticar-se e receber um token que deverá ser enviado junto com algumas requisições.
+A requisição é feita através de um POST passando seus parametros no formato **x-www-form-urlencoded**
 
 **Endpoint**
 
 ::
 
-    GET {{URL_AMBIENTE}}/security/api/quotation?identifier=c051cb56-6b95-4741-9bc2-6caf9978252d
+    POST {{URL_AMBIENTE}}/security/connect/token
+
+
+**Body**
+x-www-form-urlencoded
+
+``grant_type`` utilizar o valor: **password**.
+
+``username`` Informar o CPF do usuário
+
+``password`` Informar a senha do usuário
+
+``client_id`` utilizar o valor: **portal_argo**.
+
+``client_secret`` utilizar o valor: **portal_argo_secret**.
+
 
 **Response**
 ::
