@@ -36,6 +36,7 @@ x-www-form-urlencoded
         }
 
 
+Nas chamadas que requerem autenticação, deve ser utilizado o método de autenticação Bearer Token, passando o parametro **access_token**
 
 
 
