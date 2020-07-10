@@ -38,5 +38,13 @@ x-www-form-urlencoded
 
 Nas chamadas que requerem autenticação, deve ser utilizado o método de autenticação Bearer Token, passando o parametro **access_token**
 
+**Exemplo usando o Postman**
 
+.. image:: images/postman-token.PNG
+   :align: center
+
+**Exemplo de chamada que utiliza autenticação**
+
+.. image:: images/postman-endpoint-token.PNG
+   :align: center
 
