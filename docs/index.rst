@@ -17,6 +17,7 @@ Argo API - Documentation (REST API)
    :hidden:
    :caption: Contratação
 
+   deductibles
    riskform
    quotation
    quick-quote
