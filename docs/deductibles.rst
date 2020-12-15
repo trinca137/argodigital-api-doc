@@ -91,7 +91,7 @@ Dado isso, temos o necessário para a utilização do endpoint para obtenção d
 
 ::
 
-    POST {{URL_AMBIENTE}}/quotation/api/get-deductibles 
+    POST {{URL_AMBIENTE}}/operation/api/operations/get-deductibles 
 
 **Request** 
 

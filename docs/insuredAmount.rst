@@ -1,91 +1,130 @@
 Consulta de Importância segurada
 ====================================
 
-Serviço para obter as franquias de acordo com a configuração do formulário de risco.
+Serviço para obter as importâncias seguradas de acordo com a configuração do formulário de risco.
 
-As franquias, em cada produto E&O, variam de acordo com uma combinação de respostas à perguntas específicas do formulário de risco.
-Por exemplo, em um determinado produto, as franquias são determinadas pela resposta à pergunta "atividade segurada"; em outros, elas podem ser determinadas por uma combinação das respostas dadas à "faturamento" e "atividade segurada".
-Ainda, no caso de multiprofissionais, elas podem variar de acordo com a resposta dada à "atividade segurada" e uma determinada combinação de "categorias" que podem ser multiplamente selecionadas.
+As importâncias seguradas geralmente não possuem restrições salvo no produto "Multiprofissionais PF". 
 
 **Endpoint**
 
 ::
 
-    POST {{URL_AMBIENTE}}/quotation/api/get-deductibles 
+    POST {{URL_AMBIENTE}}/operation/api/operations/get-insured-amount 
+
+(1) Para os casos gerais, o request deverá ser realizado conforme o exemplo abaixo:
 
 **Request** 
-
-- `questionId` referentes à: 
-   - `atividade segurada`: 3
-   - `faturamento`: 5
-   - `categorias` (multiprofissionais): 6
 
 ::
 
     {
-        "questions": [
-                {
-                "questionId":"3",
-                "answers":[3]
+        "OperationCode": "CODIGO_DO_PRODUTO", 
+        "RatingTableId": 3,
+        "Questions": []
+    }
+
+
+Produto (Código do produto)
+    - Médicos PF (MDS_MEDICOS_PF)
+    - Dentistas PF (PARTNER_DENTISTAS_PF)
+
+(2) Para o caso de Multiprofissionais PF (PARTNER_MULTIPROFFISIONAIS_PF), as importâncias seguradas aplicáveis dependem da resposta dada à pergunta "Em qual categoria abaixo você se encaixa?" - id: 3 -  do formulário de risco. Segue abaixo a configuração desta pergunta:
+
+::
+
+    {
+        "id": 3,
+        "text": "Em qual categoria abaixo você se encaixa?",
+        "answers": [{
+                "id": 1,
+                "text": "Audio, Vídeo e Fotografia"
+            }, {
+                "id": 2,
+                "text": "Publicidade e Marketing"
+            }, {
+                "id": 3,
+                "text": "Turismo"
+            }, {
+                "id": 4,
+                "text": "Produção de Eventos e Entretenimento"
+            }, {
+                "id": 5,
+                "text": "Consultoria em RH e Head Hunter",
+            }, {
+                "id": 6,
+                "text": "Instituições e Profissionais de Ensino",
+            }, {
+                "id": 7,
+                "text": "Notários Públicos e Registradores",
+            }, {
+                "id": 8,
+                "text": "Jardinagem e Design de Interiores",
+            }, {
+                "id": 9,
+                "text": "Salões de Beleza",
+            }, {
+                "id": 10,
+                "text": "Empresas e Profissionais de Tecnologia",
+            }, {
+                "id": 11,
+                "text": "Síndicos e Administradores de Condomínios"
             }
-        ],
-        "operationCode":"PROTECTOR_DENTISTAS_PF"
+        ]
+    }
+
+Portanto, para obter as importâncias seguradas para "Salões de Beleza", por exemplo, o objeto "Questions" deve ser composto da seguinte forma:
+
+::
+
+    "Questions": [
+        {
+            "id": 3,
+            "answers": [9]
+        }
+    ]
+
+Para "Empresas e Profissionais de Tecnologia"
+
+::
+
+    "Questions": [
+        {
+            "id": 3,
+            "answers": [10]
+        }
+    ]
+
+e assim por diante. A requisição completa nestes casos têm o seguinte modelo:
+
+::
+
+    {
+        "OperationCode": "PARTNER_MULTIPROFFISIONAIS_PF", 
+        "RatingTableId": 3,
+        "Questions": [
+            {
+                "id": 3,
+                "answers": [10]
+            }
+        ]
     }
 
 **Response** 
+
+O endpoint deverá retornar uma lista de todas as importâncias seguradas aplicáveis ao cenário condizente com o request, seguindo o formato abaixo:
 
 ::
 
     [
         {
-            "id":8,
-            "text":"10% dos prejuízos com mínimo de R$ 500,00",
-            "typeCode":null,
-            "amount":10.0,
-            "ratingTableCode":null,
-            "ratingValueCode":null,
-            "ratingTableId":4,
-            "ratingValueId":1735,
-            "questionId":3,
-            "option":1,
-            "answers":[3],
-            "range":null,
-            "questions":null,
-            "priority":null,
-            "order":null
-        },
-        {
-            "id":7,
-            "text":"10% dos prejuízos com mínimo de R$ 1.000,00",
-            "typeCode":null,
-            "amount":10.0,
-            "ratingTableCode":null,
-            "ratingValueCode":null,
-            "ratingTableId":4,
-            "ratingValueId":1088,
-            "questionId":3,
-            "option":2,
-            "answers":[3],
-            "range":null,
-            "questions":null,
-            "priority":null,
-            "order":null
-        },
-        {
-            "id":9,
-            "text":"10% dos prejuízos com mínimo de R$ 3.500,00",
-            "typeCode":null,
-            "amount":10.0,
-            "ratingTableCode":null,
-            "ratingValueCode":null,
-            "ratingTableId":4,
-            "ratingValueId":1736,
-            "questionId":3,
-            "option":3,
-            "answers":[3],
-            "range":null,
-            "questions":null,
-            "priority":null,
-            "order":null
+            "id": 1,
+            "code": null,
+            "text": "R$ 50.000,00",
+            "documentText": null,
+            "tooltip": null,
+            "ratingValueId": "1399",
+            "ratingValueCode": null,
+            "answerConditions": [],
+            "order": null
         }
     ]
