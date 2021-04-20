@@ -37,3 +37,11 @@ Argo API - Documentation (REST API)
    :caption: Apólice
 
    policy
+
+.. toctree::
+   :maxdepth: 3
+   :hidden:
+   :caption: Politicas Neurotech 
+
+   neurotech-services
+
