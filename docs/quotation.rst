@@ -265,6 +265,8 @@ Serviço utilizado para soliciatar cotação.
 
 ``IdOperation`` Identificador da operação utilizada.
 
+``Identigier`` Código da cotação (opcional).
+
 ``EffectiveDate`` Data de inicio da contratação (Formato: AAAA/MM/DD)
 
 ``RiskAnalysis`` 
@@ -279,13 +281,6 @@ Serviço utilizado para soliciatar cotação.
     ``Name`` Nome
     ``Email`` E-mail
     ``Identity`` CPF/CNPJ do segurado
-
-``Documents`` 
-    Seção utilizada apenas na cotação do produto de Bikes para as fotos da Bike e/ou Nota Fiscal.
-
-    ``Name`` Nome do arquivo
-    ``File`` Base64 do arquivo
-
 
 **Endpoint**
 
@@ -502,28 +497,10 @@ Exemplo Bikes
             "Name": "Test User",
             "Email": "email@argo.com",
             "Identity": "00000000000"
-        },
-        "Documents": [
-            {
-                "Name": "bike.jpg",
-                "File": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
-            },
-            {
-                "Name": "bike1.jpg",
-                "File": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
-            },
-            {
-                "Name": "bike2.jpg",
-                "File": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
-            },
-            {
-                "Name": "bike3.jpg",
-                "File": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
-            }
-        ]
+        }
     }
 
-.. Note:: A cotação do produto de bike está sempre sujeito a moderação, por tanto, após solicitar a cotação, acompanhe os status da moderação através do serviço de consulta de status da moderação no :doc:`/moderation` 
+.. Note:: Após o envio da cotação do produto de bike será necessário o envio das fotos da bike através do fluxo de proposta, para dar seguimento ao processo de moderação. Para mais informações, veja :doc:`/proposal`
 
 **Exemplo Bikes**
 
@@ -543,7 +520,7 @@ Exemplo Bikes
         "voucher": "502B3Q"
     }
 
-.. Note:: Serviço utilizado para contratações do produto Bikes quando necessário
+.. Note:: Serviço utilizado para contratações do produto Bikes quando necessário. Quando for informado pelo usuário que a Bike não possui nota fiscal, acionar este endpoint antes de enviar a cotação, e utilizar o identificador gerado para enviar a cotação.
 
 Realizar cotação - Depósito Recursal
 ^^^^^^^^^^^^^^
