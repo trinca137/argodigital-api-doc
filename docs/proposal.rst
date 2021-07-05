@@ -12,34 +12,55 @@ Serviço utilizado para gerar uma proposta a partir de uma cotação existente, 
     Seção referente as informações do segurado da apólice (Devem ser as mesmas informadas no momento de realizar uma cotação).
 
     ``Name`` Nome
+    
     ``Email`` E-mail
+    
     ``Identity`` CPF/CNPJ do segurado
+    
     ``Gender``: Sexo - "M" para masculino, "F" para feminino
+    
     ``PhoneNumber`` Telefone - "(XX) XXXXX XXXX"
+    
     ``zipCode`` CEP
+    
     ``address`` Endereço
+    
     ``neighborhood`` Bairro
+    
     ``number`` Número
+    
     ``state``: UF
+    
     ``city``: Cidade
+    
     ``complement`` Complemento (opcional)
+    
     ``secondaryDriverCPF`` CPF do Segundo Condutor - Apenas BIKES - Opcional
+    
     ``secondaryDriverName`` Nome do Segundo Condutor - Apenas BIKES - Opcional,
+    
     ``birthDate``: Data de Nascimento - "YYYY-MM-DDDD"
     
 ``pepData`` 
     Seção referente as informações de PEP. (Preencher somente se for uma pessoa exposta politicamente).
 
     ``PEP`` 'true' ou 'false'
+    
     ``IDontWantToFillInTheInformation`` Se deseja preencher os campos seguintes? 'true' ou 'false'
+    
     ``EstimatedPatrimony`` Patrimônio estimado
+    
     ``FinantialSituation`` Situação financeira
+    
     ``Profession`` Profissão
    
 ``Documents`` 
     Seção referente à lista de documentos da proposta. Ex.: Fotos da Bike (quando aplicável).
+    
     ``Name`` Nome e extensão do arquivo
+    
     ``File`` Arquivo - Base64 string
+    
     ``FileType`` MIME type
     
  ``HasVoucher`` 'true' ou 'false', informar true caso não seja enviada a nota fiscal de bikes no nó ``Documents``
