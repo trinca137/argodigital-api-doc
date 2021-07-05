@@ -40,7 +40,7 @@ Serviço utilizado para gerar uma proposta a partir de uma cotação existente, 
     ``secondaryDriverName`` Nome do Segundo Condutor - Apenas BIKES - Opcional,
     
     ``birthDate``: Data de Nascimento - "YYYY-MM-DDDD"
-    
+
 ``pepData`` 
     Seção referente as informações de PEP. (Preencher somente se for uma pessoa exposta politicamente).
 
@@ -53,7 +53,8 @@ Serviço utilizado para gerar uma proposta a partir de uma cotação existente, 
     ``FinantialSituation`` Situação financeira
     
     ``Profession`` Profissão
-   
+
+
 ``Documents`` 
     Seção referente à lista de documentos da proposta. Ex.: Fotos da Bike (quando aplicável).
     
@@ -62,8 +63,10 @@ Serviço utilizado para gerar uma proposta a partir de uma cotação existente, 
     ``File`` Arquivo - Base64 string
     
     ``FileType`` MIME type
-    
- ``HasVoucher`` 'true' ou 'false', informar true caso não seja enviada a nota fiscal de bikes no nó ``Documents``
+
+
+
+``HasVoucher`` 'true' ou 'false', informar true caso não seja enviada a nota fiscal de bikes no nó ``Documents``
  
 
 **Endpoint**
