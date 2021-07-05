@@ -500,7 +500,7 @@ Exemplo Bikes
         }
     }
 
-.. Note:: Após o envio da cotação do produto de bike será necessário o envio das fotos da bike através do fluxo de proposta, para dar seguimento ao processo de moderação. Para mais informações, veja :doc:`/proposal`
+.. Note:: Após o envio da cotação do produto de bike será necessário o envio das fotos da bike através do fluxo de proposta, para dar seguimento ao processo de moderação. Para mais informações, veja :doc:`/proposal`.
 
 **Exemplo Bikes**
 
