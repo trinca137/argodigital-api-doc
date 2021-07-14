@@ -21,6 +21,7 @@ Argo API - Documentation (REST API)
    insuredAmount
    riskform
    quotation
+   proposal
    quick-quote
    checkout
 
