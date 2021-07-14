@@ -81,66 +81,67 @@ Exemplo
 
 ::
 
-{
-    "Identifier": "{identifier da cotação}",
-    //Dados do segurado
-    "PersonalData": { 
-        "name": "{Nome}",
-        "identity": "{CPF/CNPJ}",
-        "email": "{e-mail}",
-        "gender": "{sexo - M para masculino, F para feminino}",
-        "phoneNumber": "{Telefone (XX) XXXXX XXXX}",
-        "zipCode": "{CEP}",
-        "address": "{Endereço}",
-        "neighborhood": "{Bairro}",
-        "number": "{Número}",
-        "state": "{UF}",
-        "city": "{Cidade}",
-        "complement": "{Complemento (opcional)}",
-        "secondaryDriverCPF": "{CPF do Segundo Condutor - Apenas BIKES - Opcional}",
-        "secondaryDriverName": "{Nome do Segundo Condutor - Apenas BIKES - Opcional}",
-        "birthDate": "{Data de Nascimento - YYYY-MM-DDDD}"
-    },
-    //Dados de PEP
-    "PEPData": {
-        "PEP": false, //true se for Pessoa Exposta Politicamente
-        "IDontWantToFillInTheInformation": false,
-        "EstimatedPatrimony": "",
-        "FinantialSituation": "",
-        "Profession": "",
-        "PhoneNumber": "(19) 99936 552",
-        "Address": "Rua Missões, 500  - Vila Vista Alegre, Cachoeirinha - RS, 94945-410",
-        "BirthDate": "1986-08-24T03:00:00.000Z"
-    },
-    //Fotos da Bike (quando aplicável)
-    "Documents": [
-        {
-            //Foto da bike inteira
-            "Name": "{Nome e extensão do arquivo}",
-            "File": "{Arquivo - Base64}",
-            "FileType": "{MIME type}"
-        },
-        {
-            //Foto do grupo da bike
-            "Name": "{Nome e extensão do arquivo}",
-            "File": "{Arquivo - Base64}",
-            "FileType": "{MIME type}"
-        },
-        {
-            //Foto do número de série
-            "Name": "{Nome e extensão do arquivo}",
-            "File": "{Arquivo - Base64}",
-            "FileType": "{MIME type}"
-        },
-        {
-            //NF da bike (se informado na cotação que possui nota fiscal)
-            "Name": "{Nome e extensão do arquivo}",
-            "File": "{Arquivo - Base64}",
-            "FileType": "{MIME type}"
-        }
-    ],
-    "hasVoucher": false //Se possuir voucher (quando nao possuir a NF da Bike) enviar true
-}
+   {
+       "Identifier": "{identifier da cotação}",
+       //Dados do segurado
+       "PersonalData": { 
+           "name": "{Nome}",
+           "identity": "{CPF/CNPJ}",
+           "email": "{e-mail}",
+           "gender": "{sexo - M para masculino, F para feminino}",
+           "phoneNumber": "{Telefone (XX) XXXXX XXXX}",
+           "zipCode": "{CEP}",
+           "address": "{Endereço}",
+           "neighborhood": "{Bairro}",
+           "number": "{Número}",
+           "state": "{UF}",
+           "city": "{Cidade}",
+           "complement": "{Complemento (opcional)}",
+           "secondaryDriverCPF": "{CPF do Segundo Condutor - Apenas BIKES - Opcional}",
+           "secondaryDriverName": "{Nome do Segundo Condutor - Apenas BIKES - Opcional}",
+           "birthDate": "{Data de Nascimento - YYYY-MM-DDDD}"
+       },
+       //Dados de PEP
+       "PEPData": {
+           "PEP": false, //true se for Pessoa Exposta Politicamente
+           "IDontWantToFillInTheInformation": false,
+           "EstimatedPatrimony": "",
+           "FinantialSituation": "",
+           "Profession": "",
+           "PhoneNumber": "(19) 99936 552",
+           "Address": "Rua Missões, 500  - Vila Vista Alegre, Cachoeirinha - RS, 94945-410",
+           "BirthDate": "1986-08-24T03:00:00.000Z"
+       },
+       //Fotos da Bike (quando aplicável)
+       "Documents": [
+           {
+               //Foto da bike inteira
+               "Name": "{Nome e extensão do arquivo}",
+               "File": "{Arquivo - Base64}",
+               "FileType": "{MIME type}"
+           },
+           {
+               //Foto do grupo da bike
+               "Name": "{Nome e extensão do arquivo}",
+               "File": "{Arquivo - Base64}",
+               "FileType": "{MIME type}"
+           },
+           {
+               //Foto do número de série
+               "Name": "{Nome e extensão do arquivo}",
+               "File": "{Arquivo - Base64}",
+               "FileType": "{MIME type}"
+           },
+           {
+               //NF da bike (se informado na cotação que possui nota fiscal)
+               "Name": "{Nome e extensão do arquivo}",
+               "File": "{Arquivo - Base64}",
+               "FileType": "{MIME type}"
+           }
+       ],
+       "hasVoucher": false //Se possuir voucher (quando nao possuir a NF da Bike) enviar true
+   }
+
 
 **Response**
 
