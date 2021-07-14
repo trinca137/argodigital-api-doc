@@ -142,7 +142,8 @@ Exemplo
        "hasVoucher": false //Se possuir voucher (quando nao possuir a NF da Bike) enviar true
    }
 
+.. Note:: A cotação do produto de bike está sempre sujeito a moderação, por tanto, após solicitar a cotação, acompanhe os status da moderação através do serviço de consulta de status da moderação no Fluxo Moderação :doc:`/moderation`.
 
 **Response**
 
-A estrutura de response é a mesma do endpoint para obter cotação, veja :doc:`/quotation`
+A estrutura de response é a mesma do endpoint para obter cotação, veja Cotação :doc:`/quotation`
