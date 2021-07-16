@@ -5,7 +5,9 @@ Serviço para realizar o pagamento de um cotação.
 
 ``quotationCode``
     Identificador da cotação
+    
 ``generalConditionsAgreed`` Aceite das condições gerais. Sempre true
+
 ``paymentOption`` 
     Seção referente as informações de pagamento
 
